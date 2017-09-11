@@ -800,6 +800,8 @@ public class ThemeableBrowser extends CordovaPlugin {
                 } else if (features.clearsessioncache) {
                     CookieManager.getInstance().removeSessionCookie();
                 }
+                
+                inAppWebView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
 
                 inAppWebView.loadUrl(url);
                 inAppWebView.getSettings().setLoadWithOverviewMode(true);
